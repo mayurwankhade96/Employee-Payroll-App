@@ -5,11 +5,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee Payroll App</title>
+    <title>Employee Payroll Form</title>
+    <link rel="stylesheet" href="./styles/form.css">
+    <script src="./scripts/form.js" defer></script>
 </head>
 
 <body>
+    <header class="header container">
+        <div class="logo">
+            <img src="./images/logo.png" alt="company logo">
 
+            <div>
+                <span class="header-text">EMPLOYEE</span><br>
+                <span class="header-text header-text-2">PAYROLL</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="form-container">
+        <form class="form" action="#">
+            <h2 class="form-heading">Employee Payroll Form</h2>
+            <div class="input-box">
+                <label class="label label-text" for="name">Name</label>
+                <input class="input" type="text" name="name" id="name" required>
+            </div>
+
+            <div class="input-box">
+                <label class="label label-text" for="profile">Profile image</label>
+                <div class="profile-images-container">
+                    <label>
+                        <input type="radio" name="profile" id="profile1" value="./images/Ellipse 1.png">
+                        <img class="profile-image" id="image1" src="./images/Ellipse 1.png" alt="profile image">
+                    </label>
+                    <label>
+                        <input type="radio" name="profile" id="profile1" value="./images/Ellipse -2.png">
+                        <img class="profile-image" id="image1" src="./images/Ellipse -2.png" alt="profile image">
+                    </label>
+                    <label>
+                        <input type="radio" name="profile" id="profile1" value="./images/Ellipse 6.png">
+                        <img class="profile-image" id="image1" src="./images/Ellipse 6.png" alt="profile image">
+                    </label>
+                    <label>
+                        <input type="radio" name="profile" id="profile1" value="./images/Ellipse -3.png.png">
+                        <img class="profile-image" id="image1" src="./images/Ellipse -3.png" alt="profile image">
+                    </label>
+                </div>
+            </div>
+        </form>
+    </div>
 </body>
 
 </html>
