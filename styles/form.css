@@ -179,6 +179,13 @@ textarea {
   color: #fff;
 }
 
+error-output {
+  margin-left: 10px;
+  font-size: 12px;
+  font-style: italic;
+  color: red;
+}
+
 /* media queries */
 @media (max-width: 960px) {
   .cancel-btn {
