@@ -1,4 +1,4 @@
 let siteProperties = {
-  homePage: "../index.html",
-  form: "../form.html",
+  homePage: "../home.html",
+  form: "../index.html",
 };

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>Employee Payroll App</title>
+  </head>
+  <body>
+    <header class="header container">
+      <div class="logo">
+        <img src="./images/logo.png" alt="company logo" />
+
+        <div>
+          <span class="header-text">EMPLOYEE</span><br />
+          <span class="header-text header-text-2">PAYROLL</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="main-content">
+      <div class="header-content container">
+        <div class="emp-detail-text">
+          Employee Details
+          <div class="emp-count">10</div>
+        </div>
+        <a href="./form.html" class="add-button">
+          <img src="./images/icons/add-24px.svg" alt="" />Add User
+        </a>
+      </div>
+
+      <div class="table-container container">
+        <table id="table-display" class="table"></table>
+      </div>
+    </div>
+    <script src="./scripts/home.js"></script>
+    <script src="./scripts/utility.js"></script>
+    <script src="./scripts/siteProperties.js"></script>
+    <script src="./scripts/employeePayrollData.js"></script>
+  </body>
+</html>
