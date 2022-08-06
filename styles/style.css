@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* html element styling */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  height: 100%;
+}
+
+/* utility classes */
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+label {
+  padding: 1.2rem 1.2rem 1.2rem 0;
+  display: inline-block;
+}
+
+.btn {
+  font-size: 2rem;
+  line-height: 2.6rem;
+  letter-spacing: 0px;
+  color: #42515f;
+  border: 1px solid #969696;
+  padding: 1rem 3rem;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #e2e2e2;
+}
+
+/* header styling */
+.header {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  padding: 1.5em 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 5rem;
+}
+
+.header-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.2rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0px;
+  color: #82a70c;
+}
+
+.header-text-2 {
+  color: #42515f;
+}
+
+/* main content styling */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 80px);
+  background-color: #f7f7f7;
+  padding: 3rem 0 1rem;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 2.5rem;
+}
+
+.emp-detail-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #42515f;
+}
+
+.emp-count {
+  background-color: #82a70c;
+  color: #fff;
+  display: inline-block;
+  font-size: 1.6rem;
+  border-radius: 42%;
+  width: 26px;
+  text-align: center;
+}
+
+.add-button {
+  font-size: 2.2rem;
+  background: #82a70c;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0.5rem 1.8rem;
+}
+
+/* table styling */
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 1.5rem;
+  min-width: 800px;
+}
+
+td,
+th {
+  text-align: left;
+  padding: 0.5rem 0.8rem;
+}
+
+th {
+  background: #42515f;
+  color: #fff;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+tr:not(:first-child) {
+  background: #fff;
+  border: 1px solid #e3e3e3;
+  border-radius: 3px;
+}
+
+td {
+  font-size: 1.4rem;
+  color: #3d3d3d;
+}
+
+td:first-child {
+  display: flex;
+  align-items: center;
+}
+
+td img:first-child {
+  margin-right: 1rem;
+}
+
+td img {
+  cursor: pointer;
+}
+
+.dept-label {
+  background-color: #e9fea5;
+  display: inline-block;
+  width: fit-content;
+  padding: 1px 0.7rem;
+  text-align: center;
+  border-radius: 40%;
+  font-weight: 300;
+  margin-bottom: 0.8rem;
+}
