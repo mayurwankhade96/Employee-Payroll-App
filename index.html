@@ -21,7 +21,7 @@
     </header>
 
     <div class="form-container">
-      <form class="form" action="#" onsubmit="save(event)">
+      <form class="form" onsubmit="save(event)">
         <h2 class="form-heading">Employee Payroll Form</h2>
         <div class="input-box">
           <label class="label label-text" for="name">Name</label>
@@ -237,7 +237,7 @@
         </div>
 
         <div class="buttons">
-          <a href="#" class="btn reset-btn cancel-btn">Cancel</a>
+          <a href="./home.html" class="btn reset-btn cancel-btn">Cancel</a>
           <div class="submit-reset-buttons">
             <button class="btn submit-btn" type="submit">Submit</button>
             <button class="btn reset-btn" onclick="resetForm()">Reset</button>
@@ -245,9 +245,9 @@
         </div>
       </form>
     </div>
-    <script src="./scripts/employeePayrollData.js"></script>
     <script src="./scripts/employeePayrollForm.js"></script>
     <script src="./scripts/utility.js"></script>
     <script src="./scripts/siteProperties.js"></script>
+    <script src="./scripts/httpServices.js"></script>
   </body>
 </html>

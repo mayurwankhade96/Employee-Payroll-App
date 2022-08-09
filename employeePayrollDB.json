@@ -1,0 +1,52 @@
+{
+  "employees": [
+    {
+      "_name": "Mayur Wankhade",
+      "_profilePic": "./images/Ellipse -3.png",
+      "_gender": "male",
+      "_department": [
+        "engineer"
+      ],
+      "_salary": "500000",
+      "_note": "Test",
+      "_startDate": "8 Aug 2022",
+      "id": 1
+    },
+    {
+      "_name": "Sayli Sawant",
+      "_profilePic": "./images/Ellipse 1.png",
+      "_gender": "female",
+      "_department": [
+        "finance"
+      ],
+      "_salary": "500000",
+      "_note": "Testing",
+      "_startDate": "8 Aug 2022",
+      "id": 2
+    },
+    {
+      "_name": "Rohit Jadhav",
+      "_profilePic": "./images/Ellipse -2.png",
+      "_gender": "male",
+      "_department": [
+        "engineer"
+      ],
+      "_salary": "500000",
+      "_note": "Test",
+      "_startDate": "8 Aug 2022",
+      "id": 3
+    },
+    {
+      "_name": "Pratik Patil",
+      "_profilePic": "./images/Ellipse -3.png",
+      "_gender": "male",
+      "_department": [
+        "finance"
+      ],
+      "_salary": "500000",
+      "_note": "Test",
+      "_startDate": "8 Aug 2022",
+      "id": 4
+    }
+  ]
+}

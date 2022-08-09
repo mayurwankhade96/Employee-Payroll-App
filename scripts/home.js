@@ -1,20 +1,38 @@
 let empPayrollList;
-window.addEventListener("DOMContentLoaded", (event) => {
-  empPayrollList = getEmployeePayrollDataFromStorage();
-  document.querySelector(".emp-count").textContent = empPayrollList.length;
-  createInnerHtml();
-  localStorage.removeItem("editEmp");
+window.addEventListener("DOMContentLoaded", () => {
+  if (siteProperties.useLocalStorage.match("true")) {
+    getEmployeePayrollDataFromStorage();
+  } else getEmployeePayrollDataFromServer();
 });
 
 const getEmployeePayrollDataFromStorage = () => {
-  return localStorage.getItem("EmployeePayrollList")
+  empPayrollList = localStorage.getItem("EmployeePayrollList")
     ? JSON.parse(localStorage.getItem("EmployeePayrollList"))
     : [];
+  processEmployeePayrollDataResponse();
+};
+
+const processEmployeePayrollDataResponse = () => {
+  document.querySelector(".emp-count").textContent = empPayrollList.length;
+  createInnerHtml();
+  localStorage.removeItem("editEmp");
+};
+
+const getEmployeePayrollDataFromServer = () => {
+  makeServiceCall("GET", siteProperties.serverUrl, true)
+    .then((responseText) => {
+      empPayrollList = JSON.parse(responseText);
+      processEmployeePayrollDataResponse();
+    })
+    .catch(() => {
+      empPayrollList = [];
+      processEmployeePayrollDataResponse();
+    });
 };
 
 const createInnerHtml = () => {
   if (empPayrollList.length === 0) return;
-  const headerHtml = `<thead>
+  const headerHtml = `
   <tr>
     <th></th>
     <th>Name</th>
@@ -24,12 +42,12 @@ const createInnerHtml = () => {
     <th>Start Date</th>
     <th>Actions</th>
   </tr>
-</thead>`;
+`;
   let innerHtml = `${headerHtml}`;
 
   for (const empPayrollData of empPayrollList) {
     innerHtml = `${innerHtml}
-    <tbody>
+    
       <tr>
         <td>
           <img class="profile" src="${empPayrollData._profilePic}" alt="" />
@@ -41,18 +59,18 @@ const createInnerHtml = () => {
         <td>${stringifyDate(empPayrollData._startDate)}</td>
         <td>
           <img
-            id="${empPayrollData._id}" onclick="remove(this)"
+            id="${empPayrollData.id}" onclick="remove(this)"
             src="./images/icons/delete-black-18dp.svg"
             alt="delete"
           />
           <img
-            id="${empPayrollData._id}" onclick="update(this)"
+            id="${empPayrollData.id}" onclick="update(this)"
             src="./images/icons/create-black-18dp.svg"
             alt="edit"
           />
         </td>
       </tr>
-    </tbody>`;
+    `;
   }
 
   document.querySelector("#table-display").innerHTML = innerHtml;
@@ -67,23 +85,31 @@ const getDeptHtml = (deptList) => {
 };
 
 const remove = (node) => {
-  let empPayrollData = empPayrollList.find((empData) => empData._id == node.id);
-
+  let empPayrollData = empPayrollList.find((empData) => empData.id == node.id);
   if (!empPayrollData) return;
-
   const index = empPayrollList
-    .map((empData) => empData._id)
-    .indexOf(empPayrollData._id);
-
+    .map((empData) => empData.id)
+    .indexOf(empPayrollData.id);
   empPayrollList.splice(index, 1);
-
-  localStorage.setItem("EmployeePayrollList", JSON.stringify(empPayrollList));
-  document.querySelector(".emp-count").textContent = empPayrollList.length;
-  createInnerHtml();
+  if (siteProperties.useLocalStorage.match("true")) {
+    localStorage.setItem("EmployeePayrollList", JSON.stringify(empPayrollList));
+    createInnerHtml();
+  } else {
+    const deleteUrl = siteProperties.serverUrl + empPayrollData.id.toString();
+    makeServiceCall("DELETE", deleteUrl, true)
+      .then(() => {
+        document.querySelector(".emp-count").textContent =
+          empPayrollList.length;
+        createInnerHtml();
+      })
+      .catch((error) => {
+        console.log("DELETE error status: " + JSON.stringify(error));
+      });
+  }
 };
 
 const update = (node) => {
-  let empPayrollData = empPayrollList.find((empData) => empData._id == node.id);
+  let empPayrollData = empPayrollList.find((empData) => empData.id == node.id);
 
   if (!empPayrollData) return;
 
