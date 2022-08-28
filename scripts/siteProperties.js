@@ -1,6 +1,7 @@
 let siteProperties = {
-  useLocalStorage: "true",
+  useLocalStorage: "false",
   homePage: "../home.html",
   form: "../index.html",
-  serverUrl: "http://127.0.0.1:3000/employees/",
+  serverUrl:
+    "https://my-json-server.typicode.com/mayurwankhade96/employee-payroll-app/employees",
 };
