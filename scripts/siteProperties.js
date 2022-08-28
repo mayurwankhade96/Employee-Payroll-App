@@ -3,5 +3,5 @@ let siteProperties = {
   homePage: "../home.html",
   form: "../index.html",
   serverUrl:
-    "https://my-json-server.typicode.com/mayurwankhade96/employee-payroll-app/employees",
+    "https://my-json-server.typicode.com/mayurwankhade96/employee-payroll-app/employees/",
 };
