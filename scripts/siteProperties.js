@@ -1,5 +1,5 @@
 let siteProperties = {
-  useLocalStorage: "false",
+  useLocalStorage: "true",
   homePage: "../home.html",
   form: "../index.html",
   serverUrl:
